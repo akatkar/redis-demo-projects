@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Redis</title>
+</head>
+<body>
+<h1>Springboot Redis Demo</h1>
+<form method="POST">
+    <input type="text" name="key" value="test-key" th:value="${key}">
+    <input type="text" name="value" value="test-value" th:value="${value}">
+    <input type="submit" class="button" name="load" value="load">
+    <input type="submit" class="button" name="save" value="save">
+</form>
+</body>
+</html>
