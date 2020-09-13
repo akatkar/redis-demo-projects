@@ -1,0 +1,7 @@
+version: '2'
+services:
+    cache-demo-redis:
+        image: redis:6.0.8-alpine
+        hostname: redis
+        ports:
+            - 6379:6379

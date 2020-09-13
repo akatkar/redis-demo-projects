@@ -28,7 +28,7 @@ public class ArticleServiceImpl implements ArticleService {
     public List<Article> getAllArticles(){
         System.out.println("--- Inside getAllArticles() ---");
         List<Article> list = new ArrayList<>();
-        articleRepository.findAll().forEach(e -> list.add(e));
+        articleRepository.findAll().forEach(list::add);
         return list;
     }
     @Override

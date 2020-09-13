@@ -12,7 +12,7 @@ public class TestClientUtil {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http://localhost:8080/user/article/{id}";
+        String url = "http://localhost:8082/user/article/{id}";
         HttpEntity<String> requestEntity = new HttpEntity<String>(headers);
         ResponseEntity<Article> responseEntity = restTemplate.exchange(url, HttpMethod.GET, requestEntity, Article.class, id);
         Article article = responseEntity.getBody();
@@ -23,7 +23,7 @@ public class TestClientUtil {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http://localhost:8080/user/articles";
+        String url = "http://localhost:8082/user/articles";
         HttpEntity<String> requestEntity = new HttpEntity<String>(headers);
         ResponseEntity<Article[]> responseEntity = restTemplate.exchange(url, HttpMethod.GET, requestEntity, Article[].class);
         Article[] articles = responseEntity.getBody();
@@ -36,8 +36,8 @@ public class TestClientUtil {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http://localhost:8080/user/article";
-        HttpEntity<Article> requestEntity = new HttpEntity<Article>(objArticle, headers);
+        String url = "http://localhost:8082/user/article";
+        HttpEntity<Article> requestEntity = new HttpEntity<>(objArticle, headers);
         URI uri = restTemplate.postForLocation(url, requestEntity);
         System.out.println(uri.getPath());
     }
@@ -45,7 +45,7 @@ public class TestClientUtil {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http://localhost:8080/user/article";
+        String url = "http://localhost:8082/user/article";
         HttpEntity<Article> requestEntity = new HttpEntity<Article>(objArticle, headers);
         restTemplate.put(url, requestEntity);
     }
@@ -53,7 +53,7 @@ public class TestClientUtil {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http://localhost:8080/user/article/{id}";
+        String url = "http://localhost:8082/user/article/{id}";
         HttpEntity<Article> requestEntity = new HttpEntity<Article>(headers);
         restTemplate.exchange(url, HttpMethod.DELETE, requestEntity, Void.class, id);
     }

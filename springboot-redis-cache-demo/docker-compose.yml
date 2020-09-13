@@ -1,0 +1,20 @@
+version: '2'
+
+services:
+#  cache-demo-app:
+#    image: cache-demo
+#    ports:
+#      - 8080
+#    depends_on:
+#      - cache-demo-mysql
+#      - cache-demo-redis
+
+  cache-demo-mysql:
+    extends:
+        file: mysql.yml
+        service: cache-demo-mysql
+
+  cache-demo-redis:
+    extends:
+      file: redis.yml
+      service: cache-demo-redis
